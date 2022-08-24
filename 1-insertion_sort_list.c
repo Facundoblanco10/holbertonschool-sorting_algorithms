@@ -9,14 +9,14 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *node, *aft, *bef;
 
-	if (*list == NULL)
+	if (list == NULL)
 		return;
 	node = *list;
-	while (node->next)
+	while (node && node->next)
 	{
 		aft = node->next;
 		bef = node->prev;
-		if (node->n > aft->n)
+		if (node->n > aft->n && node)
 		{
 			if (aft->next)
 				aft->next->prev = node;
@@ -29,6 +29,8 @@ void insertion_sort_list(listint_t **list)
 				bef->next = aft;
 				node = bef;
 			}
+			else if (node->next && node->n > node->next->n)
+				node = node;
 			else
 				node = node->next;
 			if ((*list)->prev)
