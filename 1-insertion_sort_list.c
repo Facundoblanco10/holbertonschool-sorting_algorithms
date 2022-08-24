@@ -29,6 +29,8 @@ void insertion_sort_list(listint_t **list)
 				bef->next = aft;
 				node = bef;
 			}
+			else if (aft->n > node->n)
+				node = aft;
 			else
 				node = node->next;
 			if ((*list)->prev)
