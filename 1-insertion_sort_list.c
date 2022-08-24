@@ -30,7 +30,7 @@ void insertion_sort_list(listint_t **list)
 				node = bef;
 			}
 			else if (aft->n > node->n)
-				node = aft;
+				node = node;
 			else
 				node = node->next;
 			if ((*list)->prev)
