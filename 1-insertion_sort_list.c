@@ -12,7 +12,7 @@ void insertion_sort_list(listint_t **list)
 	if (*list == NULL)
 		return;
 	node = *list;
-	while (node->next && node)
+	while (node && node->next)
 	{
 		aft = node->next;
 		bef = node->prev;
