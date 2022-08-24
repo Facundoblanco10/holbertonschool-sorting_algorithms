@@ -29,7 +29,7 @@ void insertion_sort_list(listint_t **list)
 				bef->next = aft;
 				node = bef;
 			}
-			else if (aft->n > node->n)
+			else if (node->n > node->next->n)
 				node = node;
 			else
 				node = node->next;
